@@ -1,1 +1,19 @@
+name: Run Shell Script
 
+on:
+  push:
+    branches:
+      - main  # Change this to your target branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Shell
+        run: |
+          chmod +x ./your-script.sh  # Make sure to replace with your script's filename
+          ./your-script.sh
